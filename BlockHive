@@ -1,0 +1,15 @@
+# scripts/data_collection.py
+
+import requests
+import pandas as pd
+
+def fetch_blockchain_data(blockchain, data_type):
+    # Fetch blockchain data from a specific blockchain and data type
+    url = f'https://api.blockchain.com/v3/explorer/{blockchain}/{data_type}'
+    response = requests.get(url)
+    data = response.json()
+    return data
+
+# Example usage:
+# btc_block_data = fetch_blockchain_data('bitcoin', 'blocks')
+# print(btc_block_data)
